@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "f932afe7-319e-4c2d-8393-990b233cf215",
+		"name": "WhatsAppChatbot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17038479"
+	},
+	"item": [
+		{
+			"name": "CreateTemplate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAVWB7RhzfUBQKAv8wbHv8LTTU7iQ1GKP4InevUPYeS7Kr14lXNGBtRLq5hMcjhtNTZCyym2kbhlCkdKeLvpUtyNmhzYce5XmJ61xK2HCsWRBhoH77lYAwbULKID3JYHz7xiTOhpDwCK4mfvkCEWQoUluwejvFaFIbgcLVmQ4khH5ZC66Gt3WjgoWyTufT5AZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"business_hours_notice\",\r\n  \"category\": \"UTILITY\",\r\n  \"language\": \"en_US\",\r\n  \"components\": [\r\n    {\r\n      \"type\": \"BODY\",\r\n      \"text\": \"Our offices are open from Monday to Friday, 08:00 to 17:00. For emergencies, please contact support.\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v22.0/104927222402855/message_templates",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v22.0",
+						"104927222402855",
+						"message_templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkStatusForTemplates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAVWB7RhzfUBQKAv8wbHv8LTTU7iQ1GKP4InevUPYeS7Kr14lXNGBtRLq5hMcjhtNTZCyym2kbhlCkdKeLvpUtyNmhzYce5XmJ61xK2HCsWRBhoH77lYAwbULKID3JYHz7xiTOhpDwCK4mfvkCEWQoUluwejvFaFIbgcLVmQ4khH5ZC66Gt3WjgoWyTufT5AZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://graph.facebook.com/v23.0/104927222402855/message_templates?name=business_hours_notice",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v23.0",
+						"104927222402855",
+						"message_templates"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "business_hours_notice"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
